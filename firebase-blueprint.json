@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OtakuVerse Firestore Schema",
+  "entities": {
+    "UserProfile": {
+      "collection": "users/{uid}/profile",
+      "document": "main",
+      "fields": {
+        "uid": { "type": "string" },
+        "nickname": { "type": "string" },
+        "bio": { "type": "string" },
+        "favoriteWorkId": { "type": "string" },
+        "themeColorHex": { "type": "string" },
+        "avatarHash": { "type": "string" },
+        "bannerHash": { "type": "string" },
+        "adultMode": { "type": "string" },
+        "blurAdultCovers": { "type": "boolean" },
+        "updatedAt": { "type": "number" }
+      }
+    },
+    "UserAvatar": {
+      "collection": "users/{uid}/profile",
+      "document": "avatar",
+      "fields": {
+        "data": { "type": "string" },
+        "hash": { "type": "string" },
+        "updatedAt": { "type": "number" }
+      }
+    },
+    "UserBanner": {
+      "collection": "users/{uid}/profile",
+      "document": "banner",
+      "fields": {
+        "data": { "type": "string" },
+        "hash": { "type": "string" },
+        "updatedAt": { "type": "number" }
+      }
+    },
+    "UserLibraryWork": {
+      "collection": "users/{uid}/library",
+      "document": "{workId}",
+      "fields": {
+        "id": { "type": "string" },
+        "status": { "type": "string" },
+        "isFavorite": { "type": "boolean" },
+        "currentProgress": { "type": "number" },
+        "totalProgress": { "type": "number" },
+        "userRating": { "type": "number" },
+        "addedAt": { "type": "number" },
+        "updatedAt": { "type": "number" },
+        "workType": { "type": "string" },
+        "format": { "type": "string" },
+        "title": { "type": "string" },
+        "titleEn": { "type": "string" },
+        "cover": { "type": "string" },
+        "coverColor": { "type": "string" },
+        "avgScore": { "type": "number" },
+        "workStatus": { "type": "string" },
+        "genresJson": { "type": "string" },
+        "isDeleted": { "type": "boolean" }
+      }
+    }
+  }
+}
